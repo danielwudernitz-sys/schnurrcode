@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #f6eee1;
+  --cream-2: #efe3d0;
+  --paper: #fbf7ef;
+  --ink: #2a2420;
+  --ink-soft: #5a4f46;
+  --honey: #e9a23b;
+  --honey-deep: #c97e1f;
+  --success: #5e8c61;
+  --alert: #c4553b;
+  --radius: 22px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-mulish), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-fraunces), Georgia, serif;
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--honey);
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  /* Reusable Layout-Container */
+  .container-brand {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8;
+  }
+}
+
+/* Reduced motion respektieren (orchestrierte Reveals, keine Zappelei) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
