@@ -35,6 +35,8 @@ export async function createCheckoutSession(
   if (input.email) form.set("customer_email", input.email);
   // OSS/Umsatzsteuer: Land pro Verkauf zwingend erfassen
   form.set("billing_address_collection", "required");
+  // Rechnung automatisch erzeugen (PDF, an Kunden) — Beleg nach dem Kauf
+  form.set("invoice_creation[enabled]", "true");
 
   // Position 1: Vollzugang
   form.set("line_items[0][quantity]", "1");
