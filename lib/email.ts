@@ -5,6 +5,8 @@ const API = "https://api.brevo.com/v3/smtp/email";
 const KEY = process.env.BREVO_API_KEY;
 const FROM_EMAIL = process.env.BREVO_FROM_EMAIL || "hallo@schnurrcode.com";
 const FROM_NAME = "Schnurrcode";
+// Antworten der Kunden landen hier (echtes Postfach):
+const REPLY_TO = process.env.BREVO_REPLY_TO || "schnurrcode@gmail.com";
 
 type SendArgs = {
   to: string;
@@ -33,6 +35,7 @@ export async function sendEmail({ to, subject, html }: SendArgs): Promise<void> 
     },
     body: JSON.stringify({
       sender: { email: FROM_EMAIL, name: FROM_NAME },
+      replyTo: { email: REPLY_TO, name: FROM_NAME },
       to: [{ email: to }],
       subject,
       htmlContent: html,
