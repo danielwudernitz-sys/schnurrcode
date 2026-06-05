@@ -60,6 +60,11 @@ export const metadata: Metadata = {
     description: "Verstehen, was deine Katze dir sagt — und wie du zurücksprichst.",
     images: ["/img/og.png"],
   },
+  verification: {
+    other: {
+      "facebook-domain-verification": "cl0wx5z34fj2dq9w1qhkqjqvw5fuyv",
+    },
+  },
 };
 
 export default function RootLayout({
