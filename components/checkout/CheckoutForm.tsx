@@ -91,8 +91,9 @@ export function CheckoutForm({
           className="mt-0.5 h-4 w-4 flex-shrink-0 accent-[var(--honey)]"
         />
         <span>
-          Ich stimme zu, dass die Lieferung sofort beginnt und ich mein
-          14-tägiges Rücktrittsrecht damit verliere. (
+          Ich stimme ausdrücklich zu, dass mit der Bereitstellung des digitalen
+          Inhalts sofort begonnen wird, und ich bestätige meine Kenntnis davon,
+          dass ich dadurch mein Widerrufsrecht verliere. (
           <Link href="/widerruf" target="_blank" className="text-honey-deep underline">
             Widerrufsbelehrung
           </Link>
