@@ -18,7 +18,11 @@ export function Header() {
           >
             Login
           </Link>
-          <Button href="/uebersetzer-gratis" size="md">
+          <Button
+            href="/uebersetzer-gratis"
+            size="md"
+            className="whitespace-nowrap !px-3.5 !py-2 !text-[0.8rem] sm:!px-5 sm:!py-2.5 sm:!text-[0.95rem]"
+          >
             Gratis-Test
           </Button>
         </nav>

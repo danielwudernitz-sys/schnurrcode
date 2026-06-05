@@ -23,7 +23,7 @@ export function Logo({ iconOnly = false, size = 34, className }: LogoProps) {
       <CatMark size={size} />
       {!iconOnly && (
         <span
-          className="font-display text-[1.55rem] font-semibold leading-none text-ink"
+          className="font-display text-[1.3rem] font-semibold leading-none text-ink sm:text-[1.55rem]"
           style={{ letterSpacing: "-0.01em" }}
         >
           Schnurr
