@@ -6,7 +6,7 @@ import { DisclaimerNote } from "@/components/DisclaimerNote";
 export const metadata: Metadata = {
   title: "Gratis-Übersetzer — was sagt deine Katze?",
   description:
-    "Probier den Schnurrcode-Übersetzer gratis: Wähl die Signale deiner Katze und sieh, was sie dir sagt. Drei Deutungen kostenlos.",
+    "Probier den Schnurrcode-Übersetzer gratis: Wähl die Signale deiner Katze und sieh, was sie dir sagt. Eine Deutung kostenlos.",
   openGraph: {
     title: "Was sagt deine Katze? — Gratis-Übersetzer",
     description: "Gib ein, was deine Katze macht, und knack den Code.",
@@ -27,7 +27,7 @@ export default function UebersetzerGratisPage() {
           </h1>
           <p className="mt-3 font-body text-lg text-ink-soft">
             Wähl die Signale, die du gerade siehst — und sieh, was deine Katze
-            dir damit sagt. Drei Deutungen sind gratis.
+            dir damit sagt. Eine Deutung ist gratis.
           </p>
         </div>
         <ShareButton />

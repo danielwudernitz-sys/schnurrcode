@@ -5,15 +5,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { track } from "@/lib/track";
 
-export function CheckoutForm({
-  priceLabel,
-  bumpLabel,
-}: {
-  priceLabel: string;
-  bumpLabel: string;
-}) {
+export function CheckoutForm({ priceLabel }: { priceLabel: string }) {
   const [email, setEmail] = React.useState("");
-  const [bump, setBump] = React.useState(false);
   const [verzicht, setVerzicht] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [loading, setLoading] = React.useState(false);
@@ -33,7 +26,7 @@ export function CheckoutForm({
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, bump, widerrufVerzicht: verzicht }),
+        body: JSON.stringify({ email, widerrufVerzicht: verzicht }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -64,23 +57,6 @@ export function CheckoutForm({
           className="mt-2 w-full rounded-[16px] border-2 border-ink/10 bg-cream px-4 py-3 font-body text-ink outline-none transition-colors focus:border-honey"
         />
       </div>
-
-      {/* Order-Bump */}
-      <label className="flex cursor-pointer items-start gap-3 rounded-brand border-2 border-honey/30 bg-honey/5 p-4">
-        <input
-          type="checkbox"
-          checked={bump}
-          onChange={(e) => setBump(e.target.checked)}
-          className="mt-1 h-4 w-4 flex-shrink-0 accent-[var(--honey)]"
-        />
-        <span>
-          <span className="font-body font-700 text-ink">{bumpLabel}</span>
-          <span className="mt-0.5 block font-body text-sm text-ink-soft">
-            Die wichtigsten Notfall-Symptome auf einen Blick — als zusätzliches
-            PDF. Einmalig dazu.
-          </span>
-        </span>
-      </label>
 
       {/* FAGG-Widerrufsverzicht — Pflicht */}
       <label className="flex items-start gap-3 font-body text-sm text-ink-soft">

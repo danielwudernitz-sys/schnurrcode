@@ -48,7 +48,7 @@ export function LeadGateDecoder() {
 
   return (
     <>
-      <DecoderBuilder mode="gratis" gatedAfter={3} onGate={() => setOpen(true)} />
+      <DecoderBuilder mode="gratis" gatedAfter={1} onGate={() => setOpen(true)} />
 
       <Modal
         open={open}

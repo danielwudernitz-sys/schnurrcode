@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CheckoutForm } from "@/components/checkout/CheckoutForm";
 import { DisclaimerNote } from "@/components/DisclaimerNote";
-import { PRICE_CENTS, BUMP_CENTS, formatEuro } from "@/lib/config";
+import { PRICE_CENTS, formatEuro } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Checkout",
@@ -55,10 +55,7 @@ export default function CheckoutPage() {
 
         {/* Formular */}
         <div className="rounded-brand bg-paper p-6 shadow-card sm:p-8">
-          <CheckoutForm
-            priceLabel={formatEuro(PRICE_CENTS)}
-            bumpLabel={`+ Notfall-Symptom-Spickzettel (PDF) +${formatEuro(BUMP_CENTS)}`}
-          />
+          <CheckoutForm priceLabel={formatEuro(PRICE_CENTS)} />
         </div>
       </div>
     </div>

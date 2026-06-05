@@ -59,7 +59,7 @@ export function DecoderTeaser() {
           </h2>
           <p className="mt-4 max-w-md font-body text-lg leading-relaxed text-ink-soft">
             Das ist nur ein winziger Vorgeschmack. Im Gratis-Test übersetzt du
-            drei Signale frei — die Vollversion kombiniert über 40.
+            ein Signal frei — die Vollversion kombiniert über 40.
           </p>
           <div className="mt-7">
             <Button href="/uebersetzer-gratis" size="lg">
