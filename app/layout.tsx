@@ -3,6 +3,7 @@ import { Fraunces, JetBrains_Mono, Mulish } from "next/font/google";
 import "./globals.css";
 import { ConsentBanner } from "@/components/ConsentBanner";
 import { Analytics } from "@/components/Analytics";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL || "https://schnurrcode.com";
 
@@ -75,6 +76,7 @@ export default function RootLayout({
         {children}
         <ConsentBanner />
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
