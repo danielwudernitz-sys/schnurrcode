@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CheckoutForm } from "@/components/checkout/CheckoutForm";
 import { DisclaimerNote } from "@/components/DisclaimerNote";
+import { TrackOnMount } from "@/components/TrackOnMount";
 import { PRICE_CENTS, formatEuro } from "@/lib/config";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ const included = [
 export default function CheckoutPage() {
   return (
     <div className="container-brand py-12 sm:py-16">
+      <TrackOnMount events={["AddToCart"]} />
       <div className="mx-auto grid max-w-4xl gap-8 lg:grid-cols-2">
         {/* Zusammenfassung */}
         <div>

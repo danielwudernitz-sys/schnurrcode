@@ -5,11 +5,13 @@ import { TrustBlock } from "@/components/marketing/TrustBlock";
 import { DecoderTeaser } from "@/components/marketing/DecoderTeaser";
 import { PriceBlock } from "@/components/marketing/PriceBlock";
 import { Faq } from "@/components/marketing/Faq";
+import { TrackOnMount } from "@/components/TrackOnMount";
 
 /** Landing-/Sales-Page (Prompt 2). Footer kommt aus dem Root-Layout. */
 export default function Home() {
   return (
     <>
+      <TrackOnMount events={["ViewContent"]} />
       <Hero />
       <PainPoints />
       <Features />

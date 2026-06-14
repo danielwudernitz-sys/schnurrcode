@@ -11,8 +11,10 @@ declare global {
   }
 }
 
-// Unsere internen Events → TikTok-Eventnamen (für Kauf-Optimierung).
+// Unsere internen Events → TikTok-Eventnamen (kompletter Funnel + Kauf).
 const TIKTOK_EVENTS: Record<string, string> = {
+  ViewContent: "ViewContent",
+  AddToCart: "AddToCart",
   Lead: "SubmitForm",
   InitiateCheckout: "InitiateCheckout",
   Purchase: "CompletePayment",
