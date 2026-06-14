@@ -43,10 +43,21 @@ export function track(event: string, params?: Params) {
     /* ignore */
   }
 
-  // TikTok Pixel (Browser) — gemappte Eventnamen
+  // TikTok Pixel (Browser) — gemappte Eventnamen + Pflicht-Parameter
+  // (content_id/content_type, Wert & Währung — sonst meckert TikTok).
   try {
     const ttEvent = TIKTOK_EVENTS[event];
-    if (ttEvent) window.ttq?.track(ttEvent, params ?? {});
+    if (ttEvent) {
+      window.ttq?.track(ttEvent, {
+        content_type: "product",
+        content_id: "schnurrcode-vollzugang",
+        content_name: "Schnurrcode Vollzugang",
+        quantity: 1,
+        currency: "EUR",
+        value: 29,
+        ...params,
+      });
+    }
   } catch {
     /* ignore */
   }
