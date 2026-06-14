@@ -6,9 +6,17 @@ type Params = Record<string, unknown>;
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    ttq?: { track: (event: string, params?: Params) => void };
     plausible?: (event: string, opts?: { props?: Params }) => void;
   }
 }
+
+// Unsere internen Events → TikTok-Eventnamen (für Kauf-Optimierung).
+const TIKTOK_EVENTS: Record<string, string> = {
+  Lead: "SubmitForm",
+  InitiateCheckout: "InitiateCheckout",
+  Purchase: "CompletePayment",
+};
 
 export function hasMarketingConsent(): boolean {
   if (typeof window === "undefined") return false;
@@ -31,6 +39,14 @@ export function track(event: string, params?: Params) {
   // Meta Pixel (Browser)
   try {
     window.fbq?.("track", event, params ?? {});
+  } catch {
+    /* ignore */
+  }
+
+  // TikTok Pixel (Browser) — gemappte Eventnamen
+  try {
+    const ttEvent = TIKTOK_EVENTS[event];
+    if (ttEvent) window.ttq?.track(ttEvent, params ?? {});
   } catch {
     /* ignore */
   }
