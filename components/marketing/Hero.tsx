@@ -62,7 +62,7 @@ export function Hero() {
               Mach den Gratis-Test
             </Button>
             <Button href="/checkout" variant="secondary" size="lg">
-              Für 29 € freischalten
+              Jetzt verstehen – 29 €
             </Button>
           </motion.div>
 
@@ -70,8 +70,17 @@ export function Hero() {
             variants={item}
             className="mt-5 font-body text-sm text-ink-soft"
           >
-            Sofort-Zugang · 29 € einmalig · <strong>kein Abo</strong>
+            ⚡ Sofort-Zugang · 29 € einmalig · <strong>kein Abo</strong>
           </motion.p>
+
+          <motion.div
+            variants={item}
+            className="mt-4 flex flex-wrap gap-x-5 gap-y-1.5 font-body text-xs text-ink-soft"
+          >
+            <span>★ Basiert auf seriöser Verhaltenskunde</span>
+            <span>🔒 DSGVO · Server in der EU</span>
+            <span>🩺 Mit Tierarzt-Warnsystem</span>
+          </motion.div>
         </motion.div>
 
         {/* Hero-Illustration */}

@@ -27,7 +27,8 @@ export function PriceBlock() {
               </span>
             </div>
             <p className="mt-3 font-body text-paper/70">
-              Einmal zahlen, für immer behalten. Sofort-Zugang per E-Mail.
+              Eine einzelne Verhaltensberatung kostet 60–90 €. Hier bekommst du
+              alles — einmal zahlen, für immer behalten.
             </p>
           </div>
 
@@ -54,11 +55,14 @@ export function PriceBlock() {
                 size="lg"
                 className="w-full justify-center"
               >
-                Jetzt für 29 € freischalten
+                Jetzt Katze verstehen – 29 €
               </Button>
             </div>
-            <p className="mt-4 text-center font-body text-xs text-paper/60">
-              Digitaler Sofort-Zugang · sichere Zahlung über Stripe
+            <p className="mt-4 text-center font-body text-sm font-600 text-paper/90">
+              Sofort-Zugang. Kein Abo. Für immer deins.
+            </p>
+            <p className="mt-1 text-center font-body text-xs text-paper/60">
+              Sichere Zahlung über Stripe · Zugang per E-Mail
             </p>
           </div>
         </div>
